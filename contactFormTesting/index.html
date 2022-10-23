@@ -7,33 +7,44 @@
 </head>
 <body>
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false;">
+        <!-- <form onsubmit="sendEmail(); reset(); return false;">
             <h3>Get in Touch</h3>
             <input type="text" id="name" placeholder="Your Name" required>
             <input type="email" id="email" placeholder="Email id" required>
             <input type="text" id="phone" placeholder="Phone no." required>
             <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
             <button type="submit">Send</button>
+        </form> -->
+        <!-- <form action="https://formsubmit.co/arikashley@gmail.com" method="post">
+            <h3>Get in Touch</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Email id" required>
+            <input type="text" id="phone" placeholder="Phone no." required>
+            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            <button type="submit">Send</button>
+        </form> -->
+        <form action="https://formspree.io/f/xaykdzvd" method="POST">
+            
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email id" required>
+            <input type="text" name="phone" placeholder="Phone no." required>
+            <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
+            
+            <!-- <input type="email" name="email" placeholder="Your email">
+            <textarea name="message" placeholder="Details of your problem"></textarea>
+            <input type="file" name="attachment" accept="image/png, image/jpeg">
+            <button type="submit">Send Test</button> -->
+            <!-- <label>
+                Your email:
+                <input type="email" name="email">
+            </label>
+            <label>
+                Your message:
+                <textarea name="message"></textarea>
+            </label> -->
+            <!-- your other form fields go here -->
+            <button type="submit">Send</button>
         </form>
     </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail(){
-            Email.send({
-                Host : "smtp.gmail.com",
-                Username : "Ashley",
-                Password : "hzxwkxnleeyrknhp",
-                To : 'arikashley@gmail.com',
-                From : document.getElementById("email").value,
-                Subject : "New contact form entry",
-                Body : "Name: " + document.getElementById("name").value
-                    + "<br> Email: " + document.getElementById("email").value
-                    + "<br> Phone no: " + document.getElementById("phone").value
-                    + "<br> Message: " + document.getElementById("message").value
-            }).then(
-            message => alert(message)
-);
-        }
-    </script>
 </body>
 </html>
